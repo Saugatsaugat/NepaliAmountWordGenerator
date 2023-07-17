@@ -32,6 +32,23 @@ public class NepaliAmountDisplayer {
 
     }
 
+    public static String getNepaliPaisa(String paisa) {
+        String firstTwoCharacters = "";
+        String paisaWord = "";
+        String nepaliPaisa = "";
+        if (paisa.length() > 1) {
+            firstTwoCharacters = paisa.substring(0, 2);
+            paisaWord = getValue(firstTwoCharacters);
+        } else {
+            paisaWord = getValue(paisa);
+        }
+        for (char c : firstTwoCharacters.toCharArray()) {
+            String nepaliValue = getNepaliNumber(String.valueOf(c));
+            nepaliPaisa = nepaliPaisa + nepaliValue;
+        }
+        return nepaliPaisa;
+    }
+
     public static String convertToNepali(BigDecimal amount) {
         String nepaliExpress[] = {"", "सय", "हजार", "लाख", "करोड", "अर्ब", "खर्ब", "नील", "पद्म", "शंख", "महाशंख"};
         String paisaWord = "";
@@ -39,22 +56,16 @@ public class NepaliAmountDisplayer {
         String paisa = "";
         String nepaliRupaiya = "";
         String nepaliPaisa = "";
-        String firstTwoCharacters="";
+        String firstTwoCharacters = "";
 
         if (amount.compareTo(BigDecimal.ZERO) <= 0) {
             return "Enter value greater than zero";
         } else {
+            List<String> nepaliFigure = new ArrayList<>();
             List<String> finalSentence = new ArrayList<>();
 
             String arr[] = amount.toString().split("\\.");
             String rupaiya = arr[0];
-
-            //getting nepali number values
-            for (char c : rupaiya.toCharArray()) {
-                String nepaliValue = getNepaliNumber(String.valueOf(c));
-                nepaliRupaiya = nepaliRupaiya + nepaliValue;
-            }
-            finalSentence.add(nepaliRupaiya);
 
             if (arr.length > 1) {
                 paisa = arr[1];
@@ -68,11 +79,6 @@ public class NepaliAmountDisplayer {
                     String nepaliValue = getNepaliNumber(String.valueOf(c));
                     nepaliPaisa = nepaliPaisa + nepaliValue;
                 }
-                finalSentence.add("." + nepaliPaisa+" : ");
-
-            } else {
-                finalSentence.add(" : ");
-
             }
 
             int rupaiyaLength = rupaiya.length();
@@ -90,6 +96,11 @@ public class NepaliAmountDisplayer {
                                 finalSentence.add(" ");
                                 finalSentence.add(express);
                             }
+                            //added line for comma in nepali number.
+                            String nepaliValue = getNepaliNumber(String.valueOf(rupaiya.charAt(i)));
+                            if (nepaliValue.length() > 0) {
+                                nepaliFigure.add(nepaliValue + ",");
+                            }
                             rupaiyaLengthRef--;
                         }
                     } else if (rupaiyaLengthRef != 0 && rupaiyaLengthRef % 2 != 0) {
@@ -98,15 +109,32 @@ public class NepaliAmountDisplayer {
                             finalSentence.add(" ");
                             finalSentence.add(value);
                             String express = nepaliExpress[(rupaiyaLengthRef - 1) / 2];
-                            finalSentence.add(" ");
-                            finalSentence.add(express);
+                            if (express != null) {
+                                finalSentence.add(" ");
+                                finalSentence.add(express);
+                            }
+
                         }
+                        String nepaliValue = getNepaliNumber(String.valueOf(rupaiya.charAt(i)));
+                        if (nepaliValue.length() > 0) {
+                            nepaliFigure.add(nepaliValue);
+                        }
+                        nepaliValue = getNepaliNumber(String.valueOf(rupaiya.charAt(i + 1)));
+                        if (nepaliValue.length() > 0) {
+                            nepaliFigure.add(nepaliValue + ",");
+                        }
+
                         i++;
                         rupaiyaLengthRef = rupaiyaLengthRef - 2;
                     }
                 }
                 rupaiya = rupaiya.substring(rupaiya.length() - 3);
                 String indexVal = String.valueOf(rupaiya.charAt(0));
+                //added 
+                String nepaliValue = getNepaliNumber(String.valueOf(rupaiya.charAt(0)));
+                if (nepaliValue.length() > 0) {
+                    nepaliFigure.add(nepaliValue);
+                }
                 String valueWord = getValue(indexVal);
                 if (!"".equals(valueWord)) {
                     finalSentence.add(" ");
@@ -115,6 +143,14 @@ public class NepaliAmountDisplayer {
                     finalSentence.add("सय");
                 }
                 valueWord = getValue(rupaiya.substring(1, 3));
+                nepaliValue = getNepaliNumber(rupaiya.substring(1, 2));
+                if (nepaliValue.length() > 0) {
+                    nepaliFigure.add(nepaliValue);
+                }
+                nepaliValue = getNepaliNumber(rupaiya.substring(2, 3));
+                if (nepaliValue.length() > 0) {
+                    nepaliFigure.add(nepaliValue);
+                }
                 if (!"".equals(valueWord)) {
                     finalSentence.add(" ");
                     finalSentence.add(valueWord);
@@ -123,8 +159,11 @@ public class NepaliAmountDisplayer {
 
             } else if (rupaiya.length() == 3) {
                 String indexVal = String.valueOf(rupaiya.charAt(0));
+                String nepaliValue = getNepaliNumber(String.valueOf(rupaiya.charAt(0)));
+                if (nepaliValue.length() > 0) {
+                    nepaliFigure.add(nepaliValue);
+                }
                 String valueWord = getValue(indexVal);
-
                 if (!"".equals(valueWord)) {
                     finalSentence.add(" ");
                     finalSentence.add(valueWord);
@@ -132,6 +171,15 @@ public class NepaliAmountDisplayer {
                     finalSentence.add("सय");
                 }
                 valueWord = getValue(rupaiya.substring(1, 3));
+                nepaliValue = getNepaliNumber(rupaiya.substring(1, 2));
+                if (nepaliValue.length() > 0) {
+                    nepaliFigure.add(nepaliValue);
+                }
+                nepaliValue = getNepaliNumber(rupaiya.substring(2, 3));
+                if (nepaliValue.length() > 0) {
+                    nepaliFigure.add(nepaliValue);
+                }
+
                 if (!"".equals(valueWord)) {
                     finalSentence.add(" ");
                     finalSentence.add(valueWord);
@@ -139,20 +187,53 @@ public class NepaliAmountDisplayer {
                 finalSentence.add(" रुपैयाँ ");
 
             } else if (rupaiya.length() == 2 || rupaiya.length() == 1) {
-                String valueWord = getValue(rupaiya);
-                if (!"".equals(valueWord)) {
-                    finalSentence.add(" ");
-                    finalSentence.add(valueWord);
-                    finalSentence.add(" रुपैयाँ ");
+                if (rupaiya.length() == 1) {
+                    String valueWord = getValue(rupaiya);
+                    String nepaliValue = getNepaliNumber(rupaiya);
+                    if (nepaliValue.length() > 0) {
+                        nepaliFigure.add(nepaliValue);
+                    }
+                    if (!"".equals(valueWord)) {
+                        finalSentence.add(" ");
+                        finalSentence.add(valueWord);
+                        finalSentence.add(" रुपैयाँ ");
 
+                    }
+                } else if (rupaiya.length() == 2) {
+                    String valueWord = getValue(rupaiya);
+                    String nepaliValue = getNepaliNumber(String.valueOf(rupaiya.charAt(0)));
+                    if (nepaliValue.length() > 0) {
+                        nepaliFigure.add(nepaliValue);
+                    }
+                    nepaliValue = getNepaliNumber(String.valueOf(rupaiya.charAt(1)));
+                    if (nepaliValue.length() > 0) {
+                        nepaliFigure.add(nepaliValue);
+                    }
+                    if (!"".equals(valueWord)) {
+                        finalSentence.add(" ");
+                        finalSentence.add(valueWord);
+                        finalSentence.add(" रुपैयाँ ");
+
+                    }
                 }
+
             } else {
                 return "Sorry! Value is not recognizable";
             }
 
+            if (nepaliPaisa.length() != 0) {
+                nepaliFigure.add(".");
+                nepaliFigure.add(nepaliPaisa);
+            }
             if (paisa.length() > 0) {
                 finalSentence.add(paisaWord);
                 finalSentence.add(" पैसा ");
+            }
+            nepaliFigure.add(" : ");
+
+            //add nepaliPaisa
+            for (String word : nepaliFigure) {
+                result = result + word;
             }
             finalSentence.add("मात्र");
 
