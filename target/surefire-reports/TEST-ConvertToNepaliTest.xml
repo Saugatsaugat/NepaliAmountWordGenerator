@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="ConvertToNepaliTest" time="0.051" tests="44" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="ConvertToNepaliTest" time="0.136" tests="44" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="gnome"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
-    <property name="sun.java.command" value="/home/saugat/NetBeansProjects/NepaliAmountDisplayer/target/surefire/surefirebooter-20230717112533867_3.jar /home/saugat/NetBeansProjects/NepaliAmountDisplayer/target/surefire 2023-07-17T11-25-33_787-jvmRun1 surefire-20230717112533867_1tmp surefire_0-20230717112533867_2tmp"/>
+    <property name="sun.java.command" value="/home/saugat/NetBeansProjects/NepaliAmountDisplayer/target/surefire/surefirebooter-20230913220100553_3.jar /home/saugat/NetBeansProjects/NepaliAmountDisplayer/target/surefire 2023-09-13T22-01-00_363-jvmRun1 surefire-20230913220100553_1tmp surefire_0-20230913220100553_2tmp"/>
     <property name="surefire.test.class.path" value="/home/saugat/NetBeansProjects/NepaliAmountDisplayer/target/test-classes:/home/saugat/NetBeansProjects/NepaliAmountDisplayer/target/classes:/home/saugat/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/saugat/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/home/saugat"/>
@@ -30,13 +30,14 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/home/saugat/NetBeansProjects/NepaliAmountDisplayer/target/surefire/surefirebooter-20230717112533867_3.jar"/>
+    <property name="current.jrebel.agent.path" value="/home/saugat/.netbeans/18/griffin/jrebel.jar"/>
+    <property name="surefire.real.class.path" value="/home/saugat/NetBeansProjects/NepaliAmountDisplayer/target/surefire/surefirebooter-20230913220100553_3.jar"/>
     <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="java.runtime.version" value="1.8.0_362-8u372-ga~us1-0ubuntu1~22.04-b09"/>
+    <property name="java.runtime.version" value="1.8.0_382-8u382-ga-1~22.04.1-b05"/>
     <property name="user.name" value="saugat"/>
     <property name="path.separator" value=":"/>
-    <property name="os.version" value="5.19.0-46-generic"/>
+    <property name="os.version" value="6.2.0-32-generic"/>
     <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
@@ -45,7 +46,7 @@
     <property name="localRepository" value="/home/saugat/.m2/repository"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="java.io.tmpdir" value="/tmp"/>
-    <property name="java.version" value="1.8.0_362"/>
+    <property name="java.version" value="1.8.0_382"/>
     <property name="user.dir" value="/home/saugat/NetBeansProjects/NepaliAmountDisplayer"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
@@ -54,51 +55,51 @@
     <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
     <property name="java.vm.info" value="mixed mode"/>
     <property name="java.vendor" value="Private Build"/>
-    <property name="java.vm.version" value="25.362-b09"/>
-    <property name="java.specification.maintenance.version" value="4"/>
+    <property name="java.vm.version" value="25.382-b05"/>
+    <property name="java.specification.maintenance.version" value="5"/>
     <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="fourteenDigitAmountTest" classname="ConvertToNepaliTest" time="0.003"/>
-  <testcase name="nineteenDigitAmountTest" classname="ConvertToNepaliTest" time="0"/>
-  <testcase name="nineDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0"/>
-  <testcase name="twoDigitAmountTest" classname="ConvertToNepaliTest" time="0"/>
+  <testcase name="fourteenDigitAmountTest" classname="ConvertToNepaliTest" time="0.011"/>
+  <testcase name="nineteenDigitAmountTest" classname="ConvertToNepaliTest" time="0.004"/>
+  <testcase name="nineDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0.001"/>
+  <testcase name="twoDigitAmountTest" classname="ConvertToNepaliTest" time="0.001"/>
   <testcase name="nineteenDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0.001"/>
-  <testcase name="threeDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0"/>
-  <testcase name="twentyOneDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0.001"/>
-  <testcase name="seventeenDigitAmountTest" classname="ConvertToNepaliTest" time="0"/>
-  <testcase name="fourDigitAmountTest" classname="ConvertToNepaliTest" time="0"/>
+  <testcase name="threeDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0.001"/>
+  <testcase name="twentyOneDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0.002"/>
+  <testcase name="seventeenDigitAmountTest" classname="ConvertToNepaliTest" time="0.001"/>
+  <testcase name="fourDigitAmountTest" classname="ConvertToNepaliTest" time="0.001"/>
   <testcase name="sevenDigitAmountTest" classname="ConvertToNepaliTest" time="0.001"/>
-  <testcase name="fifteenDigitAmountTest" classname="ConvertToNepaliTest" time="0"/>
-  <testcase name="thirteenDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0"/>
+  <testcase name="fifteenDigitAmountTest" classname="ConvertToNepaliTest" time="0.001"/>
+  <testcase name="thirteenDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0.001"/>
   <testcase name="twoDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0.001"/>
-  <testcase name="moreThanTwentyOneDigitAmountTest" classname="ConvertToNepaliTest" time="0"/>
-  <testcase name="seventeenDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0"/>
-  <testcase name="twelveDigitAmountTest" classname="ConvertToNepaliTest" time="0.001"/>
+  <testcase name="moreThanTwentyOneDigitAmountTest" classname="ConvertToNepaliTest" time="0.001"/>
+  <testcase name="seventeenDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0.001"/>
+  <testcase name="twelveDigitAmountTest" classname="ConvertToNepaliTest" time="0.002"/>
   <testcase name="zeroAmountTest" classname="ConvertToNepaliTest" time="0"/>
   <testcase name="twentyOneDigitAmountTest" classname="ConvertToNepaliTest" time="0.001"/>
-  <testcase name="nineDigitAmountTest" classname="ConvertToNepaliTest" time="0"/>
-  <testcase name="sixteenDigitAmountTest" classname="ConvertToNepaliTest" time="0"/>
+  <testcase name="nineDigitAmountTest" classname="ConvertToNepaliTest" time="0.001"/>
+  <testcase name="sixteenDigitAmountTest" classname="ConvertToNepaliTest" time="0.001"/>
   <testcase name="fourteenDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0.001"/>
-  <testcase name="sixteenDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0"/>
-  <testcase name="fiveDigitAmountTest" classname="ConvertToNepaliTest" time="0"/>
-  <testcase name="fifteenDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0"/>
-  <testcase name="eightDigitAmountTest" classname="ConvertToNepaliTest" time="0"/>
+  <testcase name="sixteenDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0.001"/>
+  <testcase name="fiveDigitAmountTest" classname="ConvertToNepaliTest" time="0.001"/>
+  <testcase name="fifteenDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0.001"/>
+  <testcase name="eightDigitAmountTest" classname="ConvertToNepaliTest" time="0.001"/>
   <testcase name="tenDigitAmountTest" classname="ConvertToNepaliTest" time="0"/>
-  <testcase name="threeDigitAmountTest" classname="ConvertToNepaliTest" time="0"/>
-  <testcase name="fiveDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0.001"/>
+  <testcase name="threeDigitAmountTest" classname="ConvertToNepaliTest" time="0.01"/>
+  <testcase name="fiveDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0"/>
   <testcase name="twentyDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0"/>
   <testcase name="sixDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0"/>
-  <testcase name="tenDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0.001"/>
+  <testcase name="tenDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0"/>
   <testcase name="fourDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0"/>
   <testcase name="sevenDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0"/>
   <testcase name="eighteenDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0"/>
-  <testcase name="thirteenDigitAmountTest" classname="ConvertToNepaliTest" time="0.001"/>
+  <testcase name="thirteenDigitAmountTest" classname="ConvertToNepaliTest" time="0"/>
   <testcase name="elevenDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0"/>
   <testcase name="eighteenDigitAmountTest" classname="ConvertToNepaliTest" time="0"/>
   <testcase name="sixDigitAmountTest" classname="ConvertToNepaliTest" time="0"/>
-  <testcase name="twelveDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0.001"/>
+  <testcase name="twelveDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0"/>
   <testcase name="singleDigitAmountWithPaisaTest" classname="ConvertToNepaliTest" time="0"/>
   <testcase name="singleDigitAmountTest" classname="ConvertToNepaliTest" time="0"/>
   <testcase name="twentyDigitAmountTest" classname="ConvertToNepaliTest" time="0"/>

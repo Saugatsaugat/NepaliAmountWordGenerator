@@ -39,13 +39,16 @@ public class NepaliAmountDisplayer {
         if (paisa.length() > 1) {
             firstTwoCharacters = paisa.substring(0, 2);
             paisaWord = getValue(firstTwoCharacters);
-        } else {
+            for (char c : firstTwoCharacters.toCharArray()) {
+                String nepaliValue = getNepaliNumber(String.valueOf(c));
+                nepaliPaisa = nepaliPaisa + nepaliValue;
+            }
+        } else if (paisa.length() == 1) {
+            String nepaliValue = getNepaliNumber(paisa);
+            nepaliPaisa = nepaliPaisa + nepaliValue;
             paisaWord = getValue(paisa);
         }
-        for (char c : firstTwoCharacters.toCharArray()) {
-            String nepaliValue = getNepaliNumber(String.valueOf(c));
-            nepaliPaisa = nepaliPaisa + nepaliValue;
-        }
+
         return nepaliPaisa;
     }
 
@@ -72,13 +75,16 @@ public class NepaliAmountDisplayer {
                 if (paisa.length() > 1) {
                     firstTwoCharacters = paisa.substring(0, 2);
                     paisaWord = getValue(firstTwoCharacters);
+                    for (char c : firstTwoCharacters.toCharArray()) {
+                        String nepaliValue = getNepaliNumber(String.valueOf(c));
+                        nepaliPaisa = nepaliPaisa + nepaliValue;
+                    }
                 } else {
+                    String nepaliValue = getNepaliNumber(paisa);
+                    nepaliPaisa = nepaliPaisa + nepaliValue;
                     paisaWord = getValue(paisa);
                 }
-                for (char c : firstTwoCharacters.toCharArray()) {
-                    String nepaliValue = getNepaliNumber(String.valueOf(c));
-                    nepaliPaisa = nepaliPaisa + nepaliValue;
-                }
+
             }
 
             int rupaiyaLength = rupaiya.length();
@@ -235,6 +241,7 @@ public class NepaliAmountDisplayer {
             for (String word : nepaliFigure) {
                 result = result + word;
             }
+
             finalSentence.add("मात्र");
 
             for (String word : finalSentence) {
